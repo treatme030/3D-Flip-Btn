@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 1000px; /*원근감, 값이 작을수록 가깝고, 클수록 멈*/
+}
+
+.flip_btn {
+  width: 200px;
+  height: 100px;
+  color: white;
+  text-align: center;
+  line-height: 100px; /*요소의 height 값과 line-height 값이 같으면 수직 중앙 정렬됨*/
+  /*단, 텍스트가 한 줄 일때만 가능*/
+  transform-style: preserve-3d;
+  transition: 0.5s;
+}
+
+.flip_btn:hover {
+  transform: rotateX(-90deg);
+  cursor: pointer;
+}
+
+.front {
+  background-color: goldenrod;
+  height: 100px;
+  transform: translateZ(50px);
+}
+
+.back {
+  background-color: darkgoldenrod;
+  height: 100px;
+  transform: rotateX(90deg) translateZ(150px);
+}
